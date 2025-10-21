@@ -1,0 +1,29 @@
+# Debian packaging build artifacts
+*.deb
+*.udeb
+*.dsc
+*.changes
+*.buildinfo
+*.upload
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/helm/
+debian/helm.debhelper.log
+debian/helm.substvars
+debian/tmp/
+debian/*.debhelper
+debian/*.log
+debian/*.substvars
+
+# Source package artifacts
+*.orig.tar.*
+*.debian.tar.*
+*.diff.gz
+
+# Build directories
+build/
+.pc/
+
+# Git-buildpackage artifacts
+.gbp.conf.swp
