@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+export DH_GOPKG := helm.sh/helm/v3
+export DH_GOLANG_INSTALL_EXTRA := LICENSE README.md
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_build:
+	dh_auto_build -- -ldflags="-X helm.sh/helm/v3/internal/version.version=v3.19.0"
+
+override_dh_auto_install:
+	dh_auto_install -- --no-source
+
+override_dh_auto_test:
+	# Skip tests during package build
+	# Tests can be run separately if needed

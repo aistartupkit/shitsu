@@ -1,0 +1,64 @@
+Debian Packaging for Helm
+==========================
+
+This package follows the DEP-14 Git repository layout for Debian packages.
+
+Repository Layout
+-----------------
+
+This repository follows DEP-14 (Debian Enhancement Proposal 14) for Git
+packaging repository layout:
+
+Branch Naming:
+- debian/master or debian/sid: Main development branch
+- debian/<release>: Stable release branches (e.g., debian/bookworm)
+- upstream: Upstream source branch (if used)
+- pristine-tar: Pristine-tar delta files (if used)
+
+Tag Naming:
+- debian/<version>: Debian package release tags
+- upstream/<version>: Upstream release tags
+
+Upstream Source
+---------------
+
+The upstream source for Helm is available at:
+  https://github.com/helm/helm
+
+The package tracks the latest stable releases from the upstream repository.
+
+Building the Package
+--------------------
+
+To build this package, you need the following dependencies:
+- debhelper (>= 13)
+- dh-golang
+- golang (>= 1.19)
+
+Build the package using:
+  dpkg-buildpackage -us -uc
+
+Or using sbuild/pbuilder for a clean build environment.
+
+Standards Compliance
+--------------------
+
+This package aims to comply with:
+- Debian Policy Manual (version 4.6.2 or later)
+- DEP-14 for Git repository layout
+- Go packaging guidelines for Debian
+
+Maintainer Information
+----------------------
+
+This package is maintained by the Debian Kubernetes Team.
+For questions or contributions, please contact:
+  team+kubernetes@tracker.debian.org
+
+References
+----------
+
+- Debian Policy: https://www.debian.org/doc/debian-policy/
+- DEP-14: https://dep-team.pages.debian.net/deps/dep14/
+- Helm Homepage: https://helm.sh
+- Helm Documentation: https://helm.sh/docs
